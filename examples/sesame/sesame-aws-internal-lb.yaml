@@ -1,0 +1,12 @@
+apiVersion: operator.projectsesame.io/v1alpha1
+kind: Sesame
+metadata:
+  name: sesame-sample
+spec:
+  networkPublishing:
+    envoy:
+      type: LoadBalancerService
+      loadBalancer:
+        providerParameters:
+          type: AWS
+        scope: Internal

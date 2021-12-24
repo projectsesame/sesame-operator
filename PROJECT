@@ -1,0 +1,7 @@
+domain: projectsesame.io
+repo: github.com/projectsesame/sesame-operator
+resources:
+- group: operator
+  kind: Sesame
+  version: v1alpha1
+version: "2"

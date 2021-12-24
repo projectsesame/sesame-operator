@@ -1,0 +1,5 @@
+apiVersion: operator.projectsesame.io/v1alpha1
+kind: Sesame
+metadata:
+  name: sesame-sample
+spec: {}

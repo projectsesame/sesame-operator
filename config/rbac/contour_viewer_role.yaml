@@ -1,0 +1,20 @@
+# permissions for end users to view Sesames.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sesame-viewer
+rules:
+- apiGroups:
+  - operator.projectsesame.io
+  resources:
+  - Sesames
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - operator.projectsesame.io
+  resources:
+  - Sesames/status
+  verbs:
+  - get
