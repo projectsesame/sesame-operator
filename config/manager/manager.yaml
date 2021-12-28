@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sesame-operator
+  namespace: system
+  labels:
+    control-plane: sesame-operator
+spec:
+  selector:
+    matchLabels:
+      control-plane: sesame-operator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        control-plane: sesame-operator
+    spec:
+      containers:
+      - command:
+        - /sesame-operator
+        args:
+        - --enable-leader-election
+        image: ghcr.io/projectsesame/sesame-operator:main
+        imagePullPolicy: Always
+        name: sesame-operator
+        resources:
+          requests:
+            cpu: 100m
+            memory: 70Mi
+      terminationGracePeriodSeconds: 10

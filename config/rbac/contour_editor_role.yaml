@@ -1,0 +1,24 @@
+# permissions for end users to edit Sesames.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sesame-editor-role
+rules:
+- apiGroups:
+  - operator.projectsesame.io
+  resources:
+  - Sesames
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - operator.projectsesame.io
+  resources:
+  - Sesames/status
+  verbs:
+  - get
